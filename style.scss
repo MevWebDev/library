@@ -1,3 +1,4 @@
+
 body{
     display: flex;
     justify-content: center;
@@ -12,6 +13,7 @@ body{
 button{
     background-color: #eaceaa;
     border: #5e462b 1px solid;
+    cursor: pointer;
 }
 }
 #backdrop {
@@ -27,8 +29,10 @@ button{
 }
 main{
     padding: 2rem;
-    width: 60%;
+    width:1000px;
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
     
     .top{
         display: grid;
@@ -93,6 +97,7 @@ main{
     gap:0.3rem;
     // width: 50%;
     // height: 50%;
+    flex-shrink: 1;
     button{
         padding: 1rem;
     }
@@ -114,6 +119,7 @@ main{
         align-items: center;
         justify-content: center;
     }
+    
 }
 #book-container{
     display: flex;
@@ -135,9 +141,28 @@ main{
             align-items: center;
             padding: 0 1rem;
         }
+        :nth-child(4){
+            cursor: pointer;
+        }
+        
         button{
             width:50%;
             justify-self:center;
+            
+        }
+        
+}
+@media (max-width: 600px){
+    .card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        button{
+            width:80px;
+            justify-self:center;
+            padding: 1rem;
         }
     }
+}
 }

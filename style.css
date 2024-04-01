@@ -13,6 +13,7 @@ body h1 {
 body button {
   background-color: #eaceaa;
   border: #5e462b 1px solid;
+  cursor: pointer;
 }
 
 #backdrop {
@@ -28,8 +29,10 @@ body button {
 
 main {
   padding: 2rem;
-  width: 60%;
+  width: 1000px;
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 main .top {
   display: grid;
@@ -87,6 +90,7 @@ main .top > button {
   align-items: center;
   justify-content: center;
   gap: 0.3rem;
+  flex-shrink: 1;
 }
 .bookForm button {
   padding: 1rem;
@@ -131,7 +135,23 @@ main .top > button {
   align-items: center;
   padding: 0 1rem;
 }
+#book-container .card :nth-child(4) {
+  cursor: pointer;
+}
 #book-container .card button {
   width: 50%;
   justify-self: center;
+}
+@media (max-width: 600px) {
+  #book-container .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #book-container .card button {
+    width: 80px;
+    justify-self: center;
+    padding: 1rem;
+  }
 }/*# sourceMappingURL=style.css.map */
