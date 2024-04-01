@@ -24,10 +24,11 @@ function Book(title,author,pages, read){
     }
 }
 function addBookToLibrary(event){
+    event.preventDefault();
     if (!titleForm.value || !authorForm.value || !pagesForm.value){
         return
     }
-    event.preventDefault();
+    
     title = titleForm.value
     author = authorForm.value
     pages = pagesForm.value
