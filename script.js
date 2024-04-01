@@ -25,13 +25,12 @@ function Book(title,author,pages, read){
 }
 function addBookToLibrary(event){
     event.preventDefault();
-    if (!titleForm.value || !authorForm.value || !pagesForm.value){
-        return
-    }
-    
     title = titleForm.value
     author = authorForm.value
     pages = pagesForm.value
+    if (!titleForm.value || !authorForm.value || !pagesForm.value){
+        return
+    }
     const isRead = readForm.checked;
     const book = new Book(title,author,pages,isRead)
     myLibrary.push(book)
