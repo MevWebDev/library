@@ -16,6 +16,9 @@ body button {
   cursor: pointer;
   color: black;
 }
+body button:hover {
+  background-color: #e0b681;
+}
 
 #backdrop {
   position: fixed;
@@ -34,12 +37,13 @@ main {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 main .top {
-  display: grid;
-  grid-template-columns: 5fr 3fr;
+  display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
 }
 main .top h1 {
   display: flex;
@@ -54,6 +58,14 @@ main .top > button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+main .buttons {
+  display: flex;
+  gap: 1rem;
+}
+main .buttons button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
 .formContainer {
@@ -108,7 +120,8 @@ main .top > button {
   list-style: none;
   justify-content: space-around;
   margin-bottom: 1rem;
-  padding: 0;
+  padding: 0 0 1rem 0;
+  border-bottom: 1px solid black;
 }
 #books li {
   display: flex;
@@ -138,10 +151,27 @@ main .top > button {
 }
 #book-container .card :nth-child(4) {
   cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  justify-self: center;
+}
+#book-container .card :nth-child(4):hover {
+  filter: brightness(85%);
 }
 #book-container .card button {
-  width: 50%;
+  width: 75px;
+  height: 50px;
+  padding: 1rem;
+  border-radius: 0.5rem;
   justify-self: center;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 600px) {
   #book-container .card {

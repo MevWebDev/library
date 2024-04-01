@@ -23,11 +23,16 @@
             <input type="checkbox" name="read" id="read">
             <button id="submitButton" onclick="closePopup()">Add book</button>
         </form>
+        
     </div>
     <main>
         <div class="top">
             <h1>Mev's Library</h1>
-            <button onclick="openPopup()">Add book</button>
+            <div class="buttons">
+                <button onclick="openPopup()">Add book</button>
+                <button id="sort"onclick="sortBooks()">Sort by title</button></div>
+            
+            
         </div>
         
         </div>
@@ -42,7 +47,10 @@
         </ul>
             <div id="book-container"></div>
         </div>
+        
+        
     </main>
+    
     <script src="script.js"></script>
 </body>
 </html>
