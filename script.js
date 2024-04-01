@@ -1,5 +1,5 @@
 
-const myLibrary = [
+let myLibrary = [
 ];
 
 const book1 = new Book("The Lord of the Rings", "Tolkiem", 231,true)
@@ -25,9 +25,9 @@ function Book(title,author,pages, read){
 }
 function addBookToLibrary(event){
     event.preventDefault();
-    title = titleForm.value
-    author = authorForm.value
-    pages = pagesForm.value
+    const title = titleForm.value
+    const author = authorForm.value
+    const pages = pagesForm.value
     if (!titleForm.value || !authorForm.value || !pagesForm.value){
         return
     }
@@ -42,10 +42,6 @@ const submitButton = document.querySelector('#submitButton')
 submitButton.addEventListener('click', addBookToLibrary)
 
 const books= document.querySelector('#book-container');
-myLibrary.forEach(book => {
-    console.log(book)
-    
-});
 function showBooks(){
     books.innerHTML = '';
     myLibrary.forEach(book => {
@@ -63,14 +59,8 @@ function showBooks(){
 
         read = document.createElement("p")    
         read.innerHTML = book.read 
-        if (book.read === true){
-            read.style.backgroundColor = "green"
-            read.style.color = "white"
-        }
-        else{
-            read.style.backgroundColor = "red"
-            read.style.color = "white"
-        }
+        read.style.backgroundColor = book.read ? "green" : "red";
+        read.style.color = "white";
         read.addEventListener('click',() => {
             book.toggleRead()          
             showBooks()
@@ -83,7 +73,7 @@ function showBooks(){
         deleteButton.addEventListener('click',() => {
             const index = myLibrary.indexOf(book);
             if (index > -1) {
-                myLibrary.splice(index, 1); 
+                myLibrary = myLibrary.filter((_, i) => i !== index);
             }
             showBooks()
         })
@@ -116,8 +106,11 @@ function showBooks(){
         backdrop.classList.remove("blur"); // Remove the blur
     }
     function sortBooks(){
-        myLibrary.sort(function (a,b){
-            const titleA = a.title.toUpperCase();
+        myLibrary.sort(sortByTitle)
+        showBooks()
+    }
+    function sortByTitle(a,b){
+        const titleA = a.title.toUpperCase();
             const titleB = b.title.toUpperCase();
             if (titleA < titleB) {
                 return -1;
@@ -126,9 +119,8 @@ function showBooks(){
                 return 1;
             }
             return 0; 
-        })
-        showBooks()
-    }
+        }
+    
 window.onload = showBooks;
 
 
