@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div id="backdrop"></div>
+    <div class="formContainer" id="popup">
+        <h3>Add Book!</h3>
+        <form action class="bookForm"  ">
+            <label for="title">Title: </label>
+            <input type="text" name="title" id="title">
+            <label for="author">Author: </label>
+            <input type="text" name="author" id="author">
+            <label for="pages">Pages: </label>
+            <input type="number" name="pages" id="pages">
+            <label for="read">Read?</label>
+            <input type="checkbox" name="read" id="read">
+            <button id="submitButton" onclick="closePopup()">Add book</button>
+        </form>
+    </div>
+    <main>
+        <div class="top">
+            <h1>Mev's Library</h1>
+            <button onclick="openPopup()">Add book</button>
+        </div>
+        
+        </div>
+        
+        <div id="books">
+        <ul>
+            <li>Title</li>
+            <li>Author</li>
+            <li>Pages</li>
+            <li>Read</li>
+            <li>Delete</li>
+        </ul>
+            <div id="book-container"></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

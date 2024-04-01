@@ -1,0 +1,137 @@
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #5e462b;
+}
+body h1 {
+  color: #eaceaa;
+}
+body button {
+  background-color: #eaceaa;
+  border: #5e462b 1px solid;
+}
+
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+
+main {
+  padding: 2rem;
+  width: 60%;
+  margin-top: 2rem;
+}
+main .top {
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  align-items: center;
+  justify-content: space-between;
+}
+main .top h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .top > button {
+  justify-self: center;
+  padding: 2rem;
+  height: 20%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formContainer {
+  z-index: 2;
+  width: 500px;
+  height: 500px;
+  top: 0;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #c5b094;
+  gap: 1rem;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+}
+.formContainer h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.bookForm {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+.bookForm button {
+  padding: 1rem;
+}
+
+#books {
+  background-color: #eaceaa;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+#books ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+#books li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#book-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #eaceaa;
+}
+#book-container .card {
+  background-color: #c5b094;
+  color: #5e462b;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: space-around;
+  padding: 1rem 0;
+}
+#book-container .card p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+#book-container .card button {
+  width: 50%;
+  justify-self: center;
+}/*# sourceMappingURL=style.css.map */
