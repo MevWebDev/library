@@ -113,6 +113,7 @@ main .buttons button {
   background-color: #eaceaa;
   padding: 1rem;
   margin-top: 1rem;
+  width: 100%;
 }
 #books ul {
   display: grid;
