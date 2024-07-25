@@ -1,3 +1,4 @@
+const form = document.querySelector(".bookForm");
 const titleForm = document.querySelector("#title");
 const authorForm = document.querySelector("#author");
 const pagesForm = document.querySelector("#pages");
@@ -78,19 +79,17 @@ library.addBook(book1);
 
 submitButton.addEventListener("click", function (event) {
   event.preventDefault();
-  if (!titleForm.value || !authorForm.value || !pagesForm.value) {
-    alert("All fields must be filled out");
-    openPopup();
-    return;
+  if (form.checkValidity()) {
+    const newBook = new Book(
+      titleForm.value,
+      authorForm.value,
+      pagesForm.value,
+      readForm.checked
+    );
+    library.addBook(newBook);
+    clearForm();
+    closePopup();
   }
-  const newBook = new Book(
-    titleForm.value,
-    authorForm.value,
-    pagesForm.value,
-    readForm.checked
-  );
-  library.addBook(newBook);
-  clearForm();
 });
 
 function openPopup() {
